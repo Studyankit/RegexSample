@@ -12,9 +12,8 @@ namespace UserRegistration
         // Static Variable
         public static string firstNamePattern = "^[A-Z]{1}[a-z]{2}";
         public static string lastNamePattern = "^[A-Z]{1}[a-z]{2}";
-        public static string emailPattern = "^[a-zA-z]{3}([.]*[a-zA-Z])+[@]([a-z]{3,})+([.][a-z]{2,3})*$";
         public static string mobilePattern = "^([9][1])[ ]*[6-9]{1}[0-9]{9}$";
-
+        public static string passwordPatternR1 = "^[a-zA-Z0-9]{8}";
         //Method to Validate First Name
         public static string ValidatePattern(string userInput, string pattern)
         {
@@ -35,19 +34,17 @@ namespace UserRegistration
             var lastNameMatch = ValidatePattern(name, lastNamePattern);
             return lastNameMatch;
         }
-        public static string ValidateEmailID(string mail)
-        {
-            var mailMatch = ValidatePattern(mail, emailPattern);
-            return mailMatch;
-        }
-        //Method to Validate Mobile Number
+        //Method to Validate Mobile Nuber
         public static string ValidateMobileNumber(string number)
         {
-            if (Regex.IsMatch(number, mobilePattern))
-                return "true";
-            else
-                return "false";
+            var numberMatch = ValidatePattern(number, mobilePattern);
+            return numberMatch;
         }
-
+        //Method to Validate Mobile Nuber
+        public static string ValidatePassword(string pass)
+        {
+            var passMatch = ValidatePattern(pass, passwordPatternR1);
+            return passMatch;
+        }
     }
 }
