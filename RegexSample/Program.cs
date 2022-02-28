@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using RegexSample;
+
+UserRegistration user = new UserRegistration();
+
+if ((user.validateString("An") ))
+{
+    Console.WriteLine("Valid");
+}
+else
+{
+    Console.WriteLine("Invalid");
+}
